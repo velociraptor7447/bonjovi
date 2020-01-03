@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 public class BonjoviApplication {
 	
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	   @ResponseBody
-	   String home() {
-	      return "Hello World!";
+	   String index() {
+		  return SQLiteConnect.connect();
 	   }
 
 	public static void main(String[] args) {
+		
 		SpringApplication.run(BonjoviApplication.class, args);
 	}
 
