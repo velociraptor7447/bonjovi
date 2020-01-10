@@ -6,10 +6,10 @@ import java.sql.SQLException;
  
 /**
  *
- * @author sqlitetutorial.net
+ * @author komi.abotsi
  */
-public class SQLiteConnect {
-     /**
+public class MySQLConnect {
+    /**
      * Connect to a sample database
      */
     public static String connect() {
@@ -17,19 +17,23 @@ public class SQLiteConnect {
         String success = "Tried";
         try {
             // db parameters
-            String url = "jdbc:sqlite:C:\\Users\\komi.s.abotsi\\MySQLiteDB";
+            // Later, these should be read from a property file
+            // Also I need to figure out how to add the db name to the url;
+            final String url = "jdbc:mysql://localhost:3306/";
+            final String username = "root";
+            final String password = "903naSub)";
             // create a connection to the database
-            conn = DriverManager.getConnection(url);
-            success =  "Connection to SQLite has been established.";
+            conn = DriverManager.getConnection(url, username, password);
+            success =  "Connection to MySQL has been established.";
             
-        } catch (SQLException e) {
+        } catch (final SQLException e) {
             System.out.println(e.getMessage());
         } finally {
             try {
                 if (conn != null) {
                     conn.close();
                 }
-            } catch (SQLException ex) {
+            } catch (final SQLException ex) {
                 System.out.println(ex.getMessage());
             }
         }
