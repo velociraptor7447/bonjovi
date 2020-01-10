@@ -9,16 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @SpringBootApplication
 public class BonjoviApplication {
-	
-	@RequestMapping("/hello")
-	   @ResponseBody
-	   String index() {
-		  return SQLiteConnect.connect();
-	   }
 
-	public static void main(String[] args) {
-		
-		SpringApplication.run(BonjoviApplication.class, args);
-	}
+    @RequestMapping("/hello")
+    @ResponseBody
+    String index() {
+        return MySQLConnect.connect();
+    }
 
+    public static void main(final String[] args) {
+        SpringApplication.run(BonjoviApplication.class, args);
+    }
 }
