@@ -21,7 +21,7 @@ public class MySQLConnect {
             // Also I need to figure out how to add the db name to the url;
             final String url = "jdbc:mysql://localhost:3306/";
             final String username = "root";
-            final String password = "903naSub)";
+            final String password = "root";
             // create a connection to the database
             conn = DriverManager.getConnection(url, username, password);
             success =  "Connection to MySQL has been established.";
